@@ -1,3 +1,4 @@
 # DesignPatterns
-学习设计模式
-``Java版```
+
+## 学习设计模式
+`Java版本`
