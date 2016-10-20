@@ -21,17 +21,15 @@ public class DoubleCheckSingleton {
      * 但是这时线程B并不知道线程A是否创建了对象，可能会又重复创建一次对象，所以要在内部再进行一次判断
      * @return
      */
-    public static DoubleCheckSingleton getINSTANCE(int i){
+    public static DoubleCheckSingleton getINSTANCE(){
         if (INSTANCE == null){
             synchronized (DoubleCheckSingleton.class){
                 if(INSTANCE == null){
                     INSTANCE = new DoubleCheckSingleton();
-                    System.out.println("创建对象...");
+                    System.out.println("【创建实例...】");
                 }
             }
         }
-
-        System.out.println("实例" + i);
         return INSTANCE;
     }
 

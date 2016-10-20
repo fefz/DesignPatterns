@@ -18,6 +18,7 @@ public class LazySingelton {
     public static LazySingelton getINSTANCE(){
         if (INSTANCE == null){
             INSTANCE = new LazySingelton();
+            System.out.println("创建实例");
         }
         return INSTANCE;
     }
