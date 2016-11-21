@@ -9,15 +9,28 @@ public class LazySingelton {
      * 只有用的时候发现INSTANCE为空才去创建实例
      */
 
+    private String name ,sex ,age ,salary;
+
     private LazySingelton(){
         //body
+    }
+
+    private LazySingelton(String name,String sex,String age,String salary){
+        this.age = age;
+        this.sex = sex;
+        this.name = name;
+        this.salary = salary;
+        int i = 0;
+        while(i < 5000){
+            i++;
+        }
     }
 
     private static LazySingelton INSTANCE = null;
 
     public static LazySingelton getINSTANCE(){
         if (INSTANCE == null){
-            INSTANCE = new LazySingelton();
+            INSTANCE = new LazySingelton("swing","male","24","$1");
             System.out.println("创建实例");
         }
         return INSTANCE;

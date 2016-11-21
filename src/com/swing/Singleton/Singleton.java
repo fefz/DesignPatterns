@@ -13,9 +13,7 @@ public class Singleton {
     private static final Singleton INSTANCE = new Singleton();
 
     //将构造函数私有化，防止外部创建实例
-    private Singleton(){
-
-    }
+    private Singleton(){}
 
     //公共方法获取唯一实例
     public static Singleton getInstance(){

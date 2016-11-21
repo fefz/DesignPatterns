@@ -26,7 +26,7 @@ public class DoubleCheckSingleton {
             synchronized (DoubleCheckSingleton.class){
                 if(INSTANCE == null){
                     INSTANCE = new DoubleCheckSingleton();
-                    System.out.println("【创建实例...】");
+                    System.out.println("【创建了一个实例】");
                 }
             }
         }
