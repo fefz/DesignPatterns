@@ -13,6 +13,12 @@ public class DoubleCheckSingleton {
 
     private DoubleCheckSingleton(){
 
+        //body
+
+        try {
+            Thread.currentThread().sleep(5000);//毫秒
+        }
+        catch(Exception e){}
     }
 
     /**

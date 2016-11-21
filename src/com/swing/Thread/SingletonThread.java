@@ -18,8 +18,8 @@ public class SingletonThread implements Runnable{
     public void run() {
         int i = 1;
         while (i <= 2000){
-            DoubleCheckSingleton.getINSTANCE();//调用方法创建实例
-//            LazySingelton.getINSTANCE();
+//            DoubleCheckSingleton.getINSTANCE();//双重锁检查
+            LazySingelton.getINSTANCE();//懒汉式
             System.out.println("线程" + this.name + "-->执行第" + i + "次");
             i++;
         }

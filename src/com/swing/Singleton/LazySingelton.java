@@ -13,25 +13,20 @@ public class LazySingelton {
 
     private LazySingelton(){
         //body
+
+        try {
+            Thread.currentThread().sleep(5000);//毫秒
+        }
+        catch(Exception e){}
     }
 
-    private LazySingelton(String name,String sex,String age,String salary){
-        this.age = age;
-        this.sex = sex;
-        this.name = name;
-        this.salary = salary;
-        int i = 0;
-        while(i < 5000){
-            i++;
-        }
-    }
 
     private static LazySingelton INSTANCE = null;
 
     public static LazySingelton getINSTANCE(){
         if (INSTANCE == null){
-            INSTANCE = new LazySingelton("swing","male","24","$1");
-            System.out.println("创建实例");
+            INSTANCE = new LazySingelton();
+            System.out.println("【创建了一个实例】");
         }
         return INSTANCE;
     }
